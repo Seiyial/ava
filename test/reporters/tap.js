@@ -14,8 +14,9 @@ const run = type => t => {
 		columns: 200,
 		sanitizers: [report.sanitizers.cwd, report.sanitizers.posix, report.sanitizers.stacks]
 	});
-	const reporter = Object.assign(new TapReporter(), {
-		streams: {stderr: tty, stdout: tty}
+	const reporter = new TapReporter({
+		reportStream: tty,
+		stdStream: tty
 	});
 	return report[type](reporter)
 		.then(() => {
