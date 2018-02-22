@@ -18,7 +18,7 @@ const run = type => t => {
 		spinner: {
 			interval: 60 * 60 * 1000, // No need to update the spinner
 			color: false,
-			frames: ['·']
+			frames: ['*']
 		},
 		reportStream: tty,
 		stdStream: tty,

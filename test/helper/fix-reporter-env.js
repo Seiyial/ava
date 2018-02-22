@@ -18,7 +18,7 @@ module.exports = () => {
 	});
 
 	// Fix line endings.
-	os.EOL = '\n';
+	Object.defineProperty(os, 'EOL', {value: '\n'});
 
 	fixColors();
 	require('../../lib/chalk').set({enabled: true, level: 3});

@@ -1,13 +1,13 @@
 [?25l---tty-stream-chunk-separator
 
 ---tty-stream-chunk-separator
-· ---tty-stream-chunk-separator
+* ---tty-stream-chunk-separator
 [2K[1G---tty-stream-chunk-separator
-· a [90m[2m›[22m[39m only
+* a [90m[2m›[22m[39m only
 
   [32m1 passed[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· b [90m[2m›[22m[39m passes
+* b [90m[2m›[22m[39m passes
 
   [32m2 passed[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator

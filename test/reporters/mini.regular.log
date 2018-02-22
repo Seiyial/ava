@@ -1,44 +1,44 @@
 [?25l---tty-stream-chunk-separator
 
 ---tty-stream-chunk-separator
-· ---tty-stream-chunk-separator
+* ---tty-stream-chunk-separator
 [2K[1G---tty-stream-chunk-separator
-· unhandled-rejection [90m[2m›[22m[39m passes
+* unhandled-rejection [90m[2m›[22m[39m passes
 
   [32m1 passed[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· unhandled-rejection [90m[2m›[22m[39m unhandled non-error rejection
+* unhandled-rejection [90m[2m›[22m[39m unhandled non-error rejection
 
   [32m2 passed[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· uncaught-exception [90m[2m›[22m[39m passes
+* uncaught-exception [90m[2m›[22m[39m passes
 
   [32m3 passed[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
 stdout
-· uncaught-exception [90m[2m›[22m[39m passes
+* uncaught-exception [90m[2m›[22m[39m passes
 
   [32m3 passed[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
 stderr
-· uncaught-exception [90m[2m›[22m[39m passes
+* uncaught-exception [90m[2m›[22m[39m passes
 
   [32m3 passed[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m passes
+* test [90m[2m›[22m[39m passes
 
   [32m4 passed[39m
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m fails
+* test [90m[2m›[22m[39m fails
 
   [32m4 passed[39m
   [31m1 test failed[39m
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· [31mtest [90m[2m›[22m[31m known failure[39m
+* [31mtest [90m[2m›[22m[31m known failure[39m
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -46,7 +46,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m no longer failing
+* test [90m[2m›[22m[39m no longer failing
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -54,7 +54,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m logs
+* test [90m[2m›[22m[39m logs
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -62,7 +62,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m formatted
+* test [90m[2m›[22m[39m formatted
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -70,7 +70,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m power-assert
+* test [90m[2m›[22m[39m power-assert
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -78,7 +78,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m bad throws
+* test [90m[2m›[22m[39m bad throws
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -86,7 +86,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m bad notThrows
+* test [90m[2m›[22m[39m bad notThrows
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -94,7 +94,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m implementation throws non-error
+* test [90m[2m›[22m[39m implementation throws non-error
 
   [32m4 passed[39m
   [31m1 known failure[39m
@@ -102,7 +102,7 @@ stderr
   [33m1 skipped[39m
   [34m1 todo[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· slow [90m[2m›[22m[39m slow
+* slow [90m[2m›[22m[39m slow
 
   [32m5 passed[39m
   [31m1 known failure[39m

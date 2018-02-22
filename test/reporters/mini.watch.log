@@ -1,9 +1,9 @@
 [?25l---tty-stream-chunk-separator
 
 ---tty-stream-chunk-separator
-· ---tty-stream-chunk-separator
+* ---tty-stream-chunk-separator
 [2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m passes
+* test [90m[2m›[22m[39m passes
 
   [32m1 passed[39m [90m[2m[17:19:12][22m[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
@@ -16,11 +16,11 @@
 [?25l---tty-stream-chunk-separator
 
 ---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m passes
+* test [90m[2m›[22m[39m passes
 
   [32m1 passed[39m [90m[2m[17:19:12][22m[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m passes
+* test [90m[2m›[22m[39m passes
 
   [32m1 passed[39m [90m[2m[17:19:12][22m[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
@@ -34,11 +34,11 @@
 [?25l---tty-stream-chunk-separator
 
 ---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m passes
+* test [90m[2m›[22m[39m passes
 
   [32m1 passed[39m [90m[2m[17:19:12][22m[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
-· test [90m[2m›[22m[39m passes
+* test [90m[2m›[22m[39m passes
 
   [32m1 passed[39m [90m[2m[17:19:12][22m[39m---tty-stream-chunk-separator
 [2K[1G[1A[2K[1G[1A[2K[1G---tty-stream-chunk-separator
