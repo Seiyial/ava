@@ -34,7 +34,8 @@ function execCli(args, opts, cb) {
 	const processPromise = new Promise(resolve => {
 		child = childProcess.spawn(process.execPath, [cliPath].concat(args), {
 			cwd: dirname,
-			env,
+			env: Object.assign({CI: '1'}, env), // Force CI to ensure the correct reporter is selected
+			// env,
 			stdio: [null, 'pipe', 'pipe']
 		});
 
@@ -246,7 +247,7 @@ test('pkg-conf(resolve-dir): resolves tests process.cwd() if globs are passed on
 test('watcher reruns test files when they changed', t => {
 	let killed = false;
 
-	const child = execCli(['--verbose', '--watch', 'test.js'], {dirname: 'fixture/watcher'}, err => {
+	const child = execCli(['--verbose', '--watch', 'test.js'], {dirname: 'fixture/watcher', env: {CI: ''}}, err => {
 		t.ok(killed);
 		t.ifError(err);
 		t.end();
@@ -272,7 +273,7 @@ test('watcher reruns test files when they changed', t => {
 test('watcher reruns test files when source dependencies change', t => {
 	let killed = false;
 
-	const child = execCli(['--verbose', '--watch', 'test-*.js'], {dirname: 'fixture/watcher/with-dependencies'}, err => {
+	const child = execCli(['--verbose', '--watch', 'test-*.js'], {dirname: 'fixture/watcher/with-dependencies', env: {CI: ''}}, err => {
 		t.ok(killed);
 		t.ifError(err);
 		t.end();
@@ -296,7 +297,7 @@ test('watcher reruns test files when source dependencies change', t => {
 test('watcher does not rerun test files when they write snapshot files', t => {
 	let killed = false;
 
-	const child = execCli(['--verbose', '--watch', '--update-snapshots', 'test.js'], {dirname: 'fixture/snapshots'}, err => {
+	const child = execCli(['--verbose', '--watch', '--update-snapshots', 'test.js'], {dirname: 'fixture/snapshots', env: {CI: ''}}, err => {
 		t.ok(killed);
 		t.ifError(err);
 		t.end();
@@ -322,7 +323,7 @@ test('watcher does not rerun test files when they write snapshot files', t => {
 test('watcher reruns test files when snapshot dependencies change', t => {
 	let killed = false;
 
-	const child = execCli(['--verbose', '--watch', '--update-snapshots', 'test.js'], {dirname: 'fixture/snapshots'}, err => {
+	const child = execCli(['--verbose', '--watch', '--update-snapshots', 'test.js'], {dirname: 'fixture/snapshots', env: {CI: ''}}, err => {
 		t.ok(killed);
 		t.ifError(err);
 		t.end();
@@ -350,7 +351,7 @@ test('watcher reruns test files when snapshot dependencies change', t => {
 test('`"tap": true` config is ignored when --watch is given', t => {
 	let killed = false;
 
-	const child = execCli(['--watch', '--verbose', 'test.js'], {dirname: 'fixture/watcher/tap-in-conf'}, () => {
+	const child = execCli(['--watch', '--verbose', 'test.js'], {dirname: 'fixture/watcher/tap-in-conf', env: {CI: ''}}, () => {
 		t.ok(killed);
 		t.end();
 	});
@@ -371,7 +372,7 @@ test('`"tap": true` config is ignored when --watch is given', t => {
 ['--watch', '-w'].forEach(watchFlag => {
 	['--tap', '-t'].forEach(tapFlag => {
 		test(`bails when ${tapFlag} reporter is used while ${watchFlag} is given`, t => {
-			execCli([tapFlag, watchFlag, 'test.js'], {dirname: 'fixture/watcher'}, (err, stdout, stderr) => {
+			execCli([tapFlag, watchFlag, 'test.js'], {dirname: 'fixture/watcher', env: {CI: ''}}, (err, stdout, stderr) => {
 				t.is(err.code, 1);
 				t.match(stderr, 'The TAP reporter is not available when using watch mode.');
 				t.end();
@@ -501,7 +502,7 @@ test('use current working directory if `package.json` is not found', () => {
 
 	fs.writeFileSync(testFilePath, `import test from ${JSON.stringify(avaPath)};\ntest('test', t => { t.pass(); });`);
 
-	return execa(process.execPath, [cliPath], {cwd});
+	return execa(process.execPath, [cliPath], {cwd, env: {CI: '1'}});
 });
 
 test('workers ensure test files load the same version of ava', t => {
@@ -594,7 +595,7 @@ test('one', t => {
 })`;
 	fs.writeFileSync(path.join(cwd, 'test.js'), initial);
 
-	const run = () => execa(process.execPath, [cliPath, '--verbose', '--no-color'], {cwd, reject: false});
+	const run = () => execa(process.execPath, [cliPath, '--verbose', '--no-color'], {cwd, env: {CI: '1'}, reject: false});
 	return run().then(result => {
 		t.match(result.stdout, /1 test passed/);
 
@@ -706,7 +707,7 @@ test('snapshots infer their location from sourcemaps', t => {
 	execCli([], {dirname: relativeFixtureDir}, (err, stdout) => {
 		t.ifError(err);
 		snapFixtureFilePaths.forEach(x => verifySnapFixtureFiles(x));
-		t.match(stdout, /6 passed/);
+		t.match(stdout, /6 tests passed/);
 		t.end();
 	});
 });
@@ -745,7 +746,7 @@ test('snapshots resolved location from "snapshotDir" in AVA config', t => {
 	execCli([], {dirname: relativeFixtureDir}, (err, stdout) => {
 		t.ifError(err);
 		snapFixtureFilePaths.forEach(x => verifySnapFixtureFiles(x));
-		t.match(stdout, /6 passed/);
+		t.match(stdout, /6 tests passed/);
 		t.end();
 	});
 });
@@ -769,7 +770,7 @@ test('--color enables formatting colors', t => {
 test('sets NODE_ENV to test when it is not set', t => {
 	execCli([path.join('fixture', 'node-env-test.js')], {env: {}}, (err, stdout) => {
 		t.ifError(err);
-		t.match(stdout, /1 passed/);
+		t.match(stdout, /1 test passed/);
 		t.end();
 	});
 });
@@ -777,7 +778,7 @@ test('sets NODE_ENV to test when it is not set', t => {
 test('doesn\'t set NODE_ENV when it is set', t => {
 	execCli([path.join('fixture', 'node-env-foo.js')], {env: {NODE_ENV: 'foo'}}, (err, stdout) => {
 		t.ifError(err);
-		t.match(stdout, /1 passed/);
+		t.match(stdout, /1 test passed/);
 		t.end();
 	});
 });
